@@ -1,0 +1,938 @@
+<!DOCTYPE html>>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer ejercicio</title>
+</head>
+
+<body>
+    <h1>Fundamentos JavaScript</h1>
+    <ul>
+        <li>Zoé</li>
+        <li>Bunbury</li>
+        <li>Soda Stereo</li>
+        <li>Enanitos verdes</li>
+        <li>La Unión</li>
+    </ul>
+    
+
+    <script>
+/*        var palabra="Hola Mundo";
+        let hello="Hello Word";
+        console.log(palabra);
+        console.log(hello);
+        console.log(window.palabra);
+        console.log(window.hello);
+//Probando la declaración de variable var y bloques
+        var pain="SHINRA TENSEI";
+        console.log("Siente el dolor (Fuera) ", pain);
+        {
+            var pain="Buscar paz en un mundo de guerra ";
+            console.log("Siente el dolor (Dentro) ", pain);
+        }
+// Usar la palabra VAR es una mala practica porque declara una variable global 
+*/ /*
+        const PI=3.1416;
+        console.log(PI);
+        */
+
+    // ----------------------CADENAS DE TEXTO AKA STRINGS 
+    /*let nombre="Brian";
+    let ape="Roldan";
+    let texto="dldldflsdnflsdnfklsdkfnsldfknsldkfnldkfnslknfdlsdkfnlsdkfnsdlf";
+    let correo=new String("brian.roldan@gmail.com");
+    
+    //length esta es una propiedad que nos dice atributos de las variables, objetos, clases etc.
+    console.log(nombre, ":", nombre.length," letras, ", ape," : ", ape.length," letras, ", correo," :", correo.length, "letras.");
+    // Metodos; Accion o funcion que perfmiten ejecutaralgo con la variable o tipo de dato que hacen los objetos cadena, etc.
+    console.log(nombre.toUpperCase(),
+    ape.toLowerCase(),
+    nombre.includes("ri"),
+    ape.includes("ri"),
+    nombre.trim(),// Quita espacios en blanco al final o inicio de un texto.
+    texto.split("")
+    );*/
+
+    //----------------------------Concatenación----------
+    /*
+    let nombre="Brian";
+    let ape="Roldan";
+
+    //Concatenar
+    let saludo="Hola "+nombre+" "+ape+" buenas tardes.";
+    console.log(saludo);
+
+    //Interpolación de variables
+    //Templete String
+    let saludo2= `Hola mi nombre es ${nombre} ${ape}.`;
+    console.log(saludo2);
+
+    let ol ="<ol><li>Hashirama</li><li>Tobirama</li><li>Minato</li><li>Tsunade</li><li>Kakashi</li><li>Naruto</li></ol>";
+
+    console.log(ol)
+        //Acento invertido sirve para no concatenar tanto.
+    let ol2=`
+    <ol>
+        <li>Hashirama</li>
+        <li>Tobirama</li>
+        <li>Minato</li>
+        <li>Tsunade</li>
+        <li>Kakashi</li>
+        <li>Naruto</li>
+    </ol>`;
+    console.log(ol2); */
+    //------------------------Números (Numbers)
+    /*
+    let a=2;
+    let b=new Number(1);
+    let c = 7.12;
+    let d= "13.1";
+
+    console.log(a,b);
+    console.log(c.toFixed(1))
+    console.log(c.toFixed(5));
+    console.log(parseInt(c))
+    console.log(parseFloat(c));
+    console.log(typeof c, typeof d);
+    
+    console.log(c + parseInt(d));
+    console.log(c + parseFloat(d));
+
+    console.log(c + Number.parseInt(d));
+    console.log(c + Number.parseFloat(d));
+    */
+   //-------------------------Números Booleanbos
+   /*let verdadero=true;
+   let falso=false;
+
+   console.log(verdadero,falso);
+   console.log(typeof verdadero, typeof falso);
+
+   console.log(Boolean(0));
+   console.log(Boolean(1));
+   console.log(Boolean(-2));
+   console.log(Boolean(""));
+    */
+
+//----------------------Valores Primitivos
+/*
+ Undefine: Representan un valor ausente, una variable que no
+ tiene valor o que no ha sido inicializada. 
+
+ NULL: Significa que la variable esta vacia pero uno como 
+ programador le da ese significado de ausente. 
+ 
+ NaN (Not a Number): Indica cuando no es un numero.
+
+    let indefinida;
+    console.log(indefinida);
+
+    let nulo=null;
+    console.log(nulo);
+
+    let noEsUnNumero="Hola"*3.7; //Ejemplo de NaN
+    console.log(noEsUnNumero);
+
+*/
+//------------------------------COMPUESTOS-----------------------
+/*Funciones: Es un bloque de codigo auto contenido, que se
+define una sola vez y llamar en cualquier momento, estas
+pueden o no recibir y devolver o no parametros. 
+
+
+    // Función declaración
+        function primFuncion(){
+            console.log(10);
+            console.log(20);
+            console.log(30);
+        }
+        //Llamada a la función
+        //primFuncion();
+
+        //Función que regresa parametros.
+        function devuelveValor(){
+            console.log(10);
+            console.log(20);
+            console.log(30);
+            return "Regresa 3 valores numericos, multiplos de 10."
+
+        }
+        //let valorF=devuelveValor();
+        //console.log(valorF);
+
+        //Invocación de función que recibe parametros.
+        function saluda(nombre,apellido){
+            console.log(`Hola mi nombre es ${nombre} ${apellido}`);
+        }
+        //saluda("Brian","Roldan");
+
+
+        function declaradaFuncion(){
+            console.log("Esta es una función declarada, puede invocarse en cualquier parte de nuestreo código, incluso antes de que la función sea declarada.");
+        }
+       
+
+
+
+        //Función anonima
+
+        const funcionExpresada=function(){
+            console.log("Esto es una función expresada, es decir, una función sew le ha asignado valor como una variable, si invocamos esta función antes de su definición JS nos dira caught ReferenceError: Cannot access uncionExpresada' before initialization. ")
+
+        }
+
+        
+     */
+    //--------------------------Arrays-----------------------
+/*
+    const arreglo=[];
+    const arregloB=[1,2,true,"B","C","D",["a","e","i"]];
+
+    console.log(arreglo.length);
+    console.log(arregloB[4]);//Imprimir desde la posición.
+    console.log(arregloB[6][1]);//Imprimir desde la posición de un arreglo dentro de otro arreglo.
+    
+    //Otra forma de crear un arreglo
+    const arregloC=Array.of("A",1,8,6);
+    console.log(arregloC);
+
+    const arregloD=Array(50).fill("Puto");
+    console.log(arregloD);
+
+    //Agregar elementos a un arreglo
+    const colores=["Negro","Blanco"];
+    console.log(colores);
+    //Agregar
+    colores.push("Gris");
+    console.log(colores);
+    //Eliminar
+    colores.pop();
+    console.log(colores);
+    colores.push("Gris");
+
+    //Metodos en los Arreglos, lo arreglos cuentas con demasiados metodos y operaciones.
+    //*-forEach: Recibe una función que se ejecuta por cada elemento que tiene.
+    colores.forEach(function(elemento,index){
+        console.log(`<li id="${index}">${elemento}</li>`);
+    })
+*/
+
+
+//----------------------------OBJETOS------------
+/*Un objeto es una colección de llaves y valores
+- Dentro de un objeto a las variables seles van a llamar 
+propiedades o attributos y a las funciones dentro de un
+ objeto de les va a llamar metodos.
+
+    const objetoA={
+        //Propiedades o valores
+        nombre:"Brian",
+        apellido:"Roldan",
+        edad:23,
+        pasatiempos:["Correr","Deporte","Series"],
+        soltero:true,
+        contacto:{
+            email:"brian.com",
+            telefono:55784005,
+            face:"Brian RC"
+        },
+        saludo:function(){
+            console.log(`Hola .-.`);
+        },
+
+        diceNombre(){
+            console.log(`Hola mi nombre es ${this.nombre} ${this.apellido}, tengo ${this.edad} años y me puedes seguir en FACEBOOK como ${this.contacto.face}.`)
+        }
+
+    }
+
+    console.log(objetoA);
+    console.log(objetoA.nombre);
+    console.log(objetoA.edad);
+    console.log(objetoA.pasatiempos[1]);
+    console.log(objetoA.contacto.telefono);
+
+    objetoA.saludo();
+    objetoA.diceNombre();
+
+    console.log(Object.keys(objetoA));
+    console.log(Object.values(objetoA));
+    console.log(objetoA.hasOwnProperty("apellido"));
+    console.log(objetoA.hasOwnProperty("estudios"));
+    */
+
+
+    //---------------------------------TIPOS DE OPERADORES---
+    /*
+    - Aritmeticos: +-*%/()
+   
+   let operacion=5+(5-10)*3;
+   let divicion=5/2;
+   let modulo=5%2;
+
+
+   console.log(operacion);
+   console.log(divicion);
+   console.log(modulo);
+ */
+
+
+/*Relacionales
+>,<,=>,=<,=,==,===,!=,!==
+
+= 1 Asignación de variable
+== 2 Comparación de valores
+=== 3 Comparación de tipo de dato y de valor.
+
+console.log(7==7);
+console.log("7"==7);
+console.log("7"===7);
+
+*Logicos
+AND, OR, NOT(Niega(lo que es verdadero lo vuelve falso)) !,||,&&
+
+console.log(!true);
+console.log(!false);
+
+console.log(55===55 || "55"===55);
+console.log(55===55 && "55"===55);
+*/
+
+//----------------------------CONDICIONALES------------
+/**Estructura de control: Aquel mecanismo que permite 
+  controlar el flujo.
+
+  
+let a=66;
+let b=6;
+
+if (a>b){
+
+    console.log(`${a} es mayor que ${b}`)
+}else{
+    console.log(`${b} es mayor que ${a}`)
+}
+
+--- --- IF ELSE------
+Es de madrudada... - 0hrs - 5hrs
+Buenos dias- 6hrs-11:59hrs
+Buenas tardes-12hrs-6:00hrs
+Buenas noches-6:01hrs-23:59hrs
+
+
+let hora=24;
+
+if(hora>=0 && hora<=5){
+    console.log(`Son las ${hora}, es de madrugada.`);
+}else if(hora>5&&hora<12){
+    console.log(`Son las ${hora}, Buenos dias.`);
+}else if(hora>=12&&hora<=18){
+    console.log(`Son las ${hora}, Buenas tardes.`);
+}else if(hora>=18&&hora<=24){
+    console.log(`Son las ${hora}, Buenas noches.`);
+}else{
+    console.log("Buenas noches.");
+}
+
+// Opedor ternario(condición)? verdadero:falsa
+let edad=18;
+console.log("Operador ternario");
+let eresMayor=(edad<18)
+?"Eres menor de edad."//Verdadero
+:"Eres mayor de edad.";//Falso
+console.log(eresMayor);
+
+// ----------------switch - case
+let dia =1;
+
+switch (dia) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    
+    case 3:
+        console.log("Miercoles");
+        break;
+    
+    case 4:
+        console.log("Jueves");
+        break;
+
+    case 5:
+        console.log("Viernes");
+        break;
+    case 6:
+        console.log("Sabado");
+        break;
+    case 7: 
+        console.log("Domingo");
+        break;
+
+    default:
+        console.log("Opción no valida, vuelve a intentarlo.");
+        break;
+}
+*/
+//----------------------------CICLOS REPETITIVOS-------
+ /*
+While: Mientras.
+Do While:
+
+let contador=0;
+
+while(contador!=10){
+    console.log("while"+contador);
+    contador++;
+}
+
+
+do {
+    console.log("do while"+contador);
+    contador++;
+    
+} while (contador<10);
+
+//----for
+for (let index = 10; index >=1; index--) {
+    console.log("for - {}"+index);
+
+let arregloFor=[1,2,3,4,5,6,7,8,10];
+
+for (let index = 0; index <=arregloFor.length; index++) {
+    console.log(arregloFor[index]);
+}
+
+const alumno={
+    nombre:"Brian",
+    apellido:"Roldan",
+    edad:23,
+    educacion:"Licenciatura"
+}
+
+for (const dato in alumno) {
+   console.log(`Key:${dato}, Value:${alumno[dato]}`);
+}
+
+let texto="Helo bitch";
+
+for (const letra of texto) {
+    console.log(letra);
+}
+}*/
+//---------------------------MANEJO DE ERRORRES----------
+/*
+try {
+    console.log("Esta es un prueba de manejoo de errores.");
+    noExiste;
+} catch (error) {
+    console.log("Captura cualquier error lanzado.");
+}finally{
+    console.log("Se ejecutara siempre al final de un bloque try catch.");
+}
+try {
+    let numero="n";
+
+    if(isNaN(numero)){
+        throw new Error("Solo se admiten números.");
+    }
+    console.log(numero*numero);
+    
+} catch (error) {
+    console.log(`Se produjo el siguiente error: ${error}`);
+    
+}
+*/
+//---------------BREAK & CONTINUE-----------------
+
+//ARREGLOR
+/*const aNumeros=[0,1,2,3,4,5,6,7,8,9,10];
+
+for (let i = 0; i < aNumeros.length; i++) {
+    if (i%2){
+        continue;
+    }
+    console.log(aNumeros[i]);
+}
+*/
+
+//-------------------DESTRUCTURACIÓN--------
+/*
+        const numeros=[1,2,3];
+        //Sin destructuración
+        let uno=numeros[0];
+        let dos=numeros[1];
+        let tres=numeros[2];
+        console.log(uno,dos,tres);
+        //Con destructuración
+        const [one,two,three]=numeros;
+        console.log(one,two,three);
+
+        //Definición del objeto
+        const auto={
+            neumaticos:4,
+            puertas:4,
+            color:"Rojo",
+            transmision:"standard"
+        }
+        //Destructuración en un objeto
+        let {neumaticos,puertas,color,transmision}=auto;
+        console.log(neumaticos,puertas,color,transmision)
+*/
+//------------------PARAMETROS REST & OPERADORES SPREAD--
+    //Parametro REST
+    /*
+        function sumar(num1,num2,...num3){//rest son los 3 puntos
+            let resultado=num1+num2;
+
+            num3.forEach(function(n){
+                resultado=resultado+n
+            });
+            return resultado;
+        }
+        console.log(sumar(1,2));
+        console.log(sumar(3,3,4));
+        console.log(sumar(3,3,4,5,5));
+        console.log(sumar(3,3,4,10,6,8));
+    // Operador Spred
+
+        const arr1=[2,4,5,6,7];
+        const arr2=[8,9,10,11];
+
+        console.log(arr1,arr2);
+
+        const arr3=[...arr1,...arr2];
+        console.log(arr3);
+    */
+   //----------------------PROTOTIPOS---------------
+   /**Prototipo: Mecanismo por el cual un objeto puede heredar de un objeto 
+    *           padre propiedades y metodos.
+   Clases:Es un modelo a seguir para poder basarnos y poder
+   crear instancias o objetos.
+   Objetos:Es una instancia de una clase con 
+        Atributos : Caracteristica o propiedad de 
+                    un objeto (son variables dentro de un objeto).
+                    
+        Metodos : Son acciones de un objeto puede realizar
+                (funciones dentro de un objeto).
+   
+   
+  const animal={
+    nombre:"Pato",
+    especie:"Ave",
+    sonido:"Grasnar",
+    sonar(){
+        console.log("Cuac, Cuac");
+    }
+  }
+   
+  const animal2={
+    nombre:"Gallina",
+    especie:"Ave",
+    sonido:"Quiquiriquea",
+    sonar(){
+        console.log("QUIQUIRIKII.")
+    }
+  }
+
+  console.log(animal);
+  console.log(animal2);
+  */
+
+  /*
+  // Ejemplo de un prototipo:
+  //Función constructura//UpperCame case(se inicia con mayuscula)
+  function Animal(nombre, especie, sonido){
+    //Atributos
+    this.nombre=nombre;
+    this.especie=especie;
+    this.sonido=sonido;
+    //Metodos:
+        /*Por ahorro de espacio en memoria los metodos
+        deben estar afuera de los prototipos y estar 
+        a estos.
+    this.sonar=function(){
+        console.log("Hace sonido");
+    }
+    }
+
+    
+    //Asi es como debe ir un metodo.
+    Animal.prototype.sonar=function(){
+        console.log("Cuak Cuak");
+    }
+    Animal.prototype.sonarGallina=function(){
+        console.log("Qui qui ri ki")
+    }
+
+
+   //---------------HERENCIA PROTOTÍPICA-------------
+   /*
+   function Perro(nombre,raza,tamano){
+    this.super = Animal;
+    this.super(nombre);
+    this.raza=raza;
+    this.tamano=tamano;
+    
+    }
+
+    //Proptotipo perro/Esta heredando de animal.
+    Perro.prototype=new Animal();
+    Perro.prototype.constructor=Perro;
+
+    //Sobre escritura de metodo padre en el hijo.
+    Perro.prototype.sonar=function(){
+        console.log("Soy un perro, mi sonido es un ladrido.");
+
+    }
+    Perro.prototype.ladrar=function(){
+        console.log("Wuauu, wuauuu");
+    }
+        
+  
+
+  const pato=new Animal("Pato","Ave","Cuac");
+  const gallina=new Perro("Abba","Pitbull","Mediano");
+  
+  
+  console.log(pato);
+  console.log(gallina);
+  
+
+
+  pato.sonar();
+  gallina.sonar();
+  gallina.ladrar();
+  */
+
+
+        //_--------------------CLASES---------------
+         /*
+        class Animal{
+            constructor(nombre,especie,genero){
+                this.nombre=nombre;
+                this.especie=especie;
+                this.genero=genero;
+            }
+            
+            //METODOS
+            sonido(){
+                console.log("Soy un animal.");
+            }
+            sonidoEspecie(){
+                console.log(`${this.especie}`);
+            }
+            //Metodo estatico: Se pueden ejecutar sin necesidad
+            de instanciar la clase.
+        }
+        //--------HERENCIA------
+        class Ave extends Animal{
+            constructor(nombre,genero,tamano){
+            /*Con el metodo super() se manda a llamar 
+            el constructor de la clase padre */
+             /*
+            super(nombre,genero);
+            this.tamano=tamano;
+            }
+
+            //Metodos
+            sonido(){
+                console.log("Soy un ave.");
+            }
+            sonidoAve(){
+                console.log(`Este es mi sonido: ${this.nombre}`);
+            }
+        }
+        
+        static desendencia(){
+            console.log("Ejemplo de un metodo statico.");
+        }
+
+        //Los setters y getters son métodos especiales que
+        nos permiten establecer y obtener valores de atributos
+        de nuestra clase.
+
+        const abba=new Animal("Abba","Perra","Hembra");
+        const frijol=new Ave("Frijol","Alcón","Macho");
+
+        console.log(abba);
+        console.log(frijol);
+
+        frijol.sonido();
+        frijol.sonidoEspecie();
+
+        abba.sonido();
+        abba.sonidoEspecie();
+        */
+        /*
+        console.log(console);
+        console.error("Esto es un error");
+        console.warn("Esto es un aviso.");
+        console.info("Esto solo muestra información.");
+        console.log("Un registro de lo que ha pasado en la aplicación");
+
+        let nombre= "Brian";
+        let apellido="Roldan";
+        let edad=23;
+
+        console.log(nombre,apellido,edad);
+        console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años.`);
+
+        console.clear();//Limpia la consola.
+        console.log(window);
+        console.log(document);
+        console.dir(window);
+        console.dir(document);
+
+        console.clear();
+        //Crea Grupos
+        console.group("Brian Roldan, Manejo en lenguajes:");
+        console.log("C++");
+        console.log("Java");
+        console.log("Python");
+        console.log("UiPath");
+        console.log("BluePrism");
+        console.log("Rocketbot");
+        console.log("Html5/Css");
+        console.log("JavaScrip");
+        console.groupEnd();
+
+        console.clear();
+
+        console.log(console);
+        console.table(Object.entries(console));
+
+        const numeros=[1,2,3,4,5,6,7,8];
+        const vocales=["a","e","i","o","u"];
+
+        console.clear();
+
+        const unObjeto={
+            nombre:"Grot",
+            grupo:"Herue",
+            habilidad:"Ramas",
+            altura:"2 m"
+        }
+
+        console.table(numeros);
+        console.table(vocales);
+        console.table(unObjeto);
+
+        console.clear();
+
+        console.time("Tiempo que tarda mi código.");
+        const arreglo1 = Array(1000000);
+
+        for(let i=0; i< arreglo1.length;i++){
+            arreglo1[i]=i;
+        }
+
+        console.timeEnd("Tiempo que tarda mi código.");
+        //console.log(arreglo1);
+
+        console.clear();
+
+        for(let i=0;i<=100;i++){
+            console.count("cod-for");
+            console.log(i);
+        }
+
+        console.clear();
+
+        let a=9;
+        let b=6;
+        let pruebaAB ="Se espera que b sea mayor que a";
+
+        console.assert(a<b,pruebaAB);
+        */
+       //--------------OBJETO DATE--------------
+       /*console.log(Date());
+
+       let fecha=new Date();
+       console.log(fecha);
+        //dia del mes
+       console.log(fecha.getDate());
+       //dia de la semana
+       console.log(fecha.getDay());
+       // numero del mes
+       console.log(fecha.getMonth());
+       //Obttener año
+       console.log(fecha.getFullYear());
+       //Obtener hora
+       console.log(fecha.getHours());
+       //Obtener minutos
+       console.log(fecha.getMinutes());
+       //Obtener segundos
+       console.log(fecha.getSeconds());
+       //Mas entendible
+       console.log(fecha.toString());
+       //Obtener en cadena de texto solo la fecha.
+       console.log(fecha.toDateString());
+       //Otra forma de representar la fecha.
+       console.log(fecha.toLocaleString());
+       console.log(fecha.toLocaleDateString());
+        //Minutos de la hora 0
+       console.log(fecha.getTimezoneOffset());
+
+       console.log(fecha.getUTCDate());
+       console.log(fecha.getUTCHours());
+       //Forma de representar el tiempo expresando desde los segundos de 1970.
+       console.log(Date.now());
+       //Obtener una fecha en especifico(Cumpleaños)
+       let cumpleanos=new Date(2000,3,13);
+       console.log(cumpleanos);
+       */
+
+
+      //--------------------OBJETO MATH--------------
+        /*console.log(Math);
+        console.log(Math.PI);
+        //Devuelve el valor absoluto de un numero.
+        console.log(Math.abs(-9.1));
+        //Redondear un valor
+            //Siempre lo sube
+        console.log(Math.ceil(9.1));
+            //Siempre lo baja
+        console.log(Math.floor(9.9));
+            //Redondea al mas cercano
+        console.log(Math.round(9.51));
+        //Raiz cuadrada
+        console.log(Math.sqrt(25));
+        //Potencia
+        console.log(Math.pow(2,5));
+        //Incicar valor es (negativo,pocitivo o 0)
+        console.log(Math.sign(-0.3));
+        //Random da un valora aleatorio entre 0 y 1
+        console.log(Math.random());
+            //valor aleatorio entero.
+        console.log(Math.round(Math.random()*100));*/
+
+        //--------------OPERADOR CORTOCIRCITO
+        /*
+        Corto circuito OR: Cuiando el valor de la izquierda 
+        en la expresión siempre pueda validar a true, es el 
+        valor que se cargará por defecto.
+
+        Corto circuito AND: Cuando el valor de la izquierda
+        en la expresión siempre pueda validar a false, es el
+        valor que se cargará por defecto.
+        
+
+        //Corto circuito OR || Ejemplo:
+        function saludo(nombre){
+            nombre=nombre || "No asignado";
+            console.log(`Hola ${nombre}`);
+        }
+        function saludar(nombre1="Desconocido"){
+            console.log(`Hola ${nombre1}`);
+        }
+        saludo();
+        saludar("Brian");
+        console.clear();
+        //Otros ejemplos de corto circuito OR
+        console.log("Brian"||"No asignado");
+        console.log(0||"Valor no asignado");
+        console.log(22||"Valor no asignado");
+        console.log(false||"Valor no asignado");
+        console.log(true||"Valor no asignado");
+        console.clear();
+
+        //Corto circuito con AND && Ejemplo:
+        function nuevoSaludo(nuevoNombre){
+            nuevoNombre=nuevoNombre&&"Valor AND";
+            console.log(`Hola ${nuevoNombre}`);
+        }
+        nuevoSaludo("Brian");
+        //Otros ejemplos de corto circuito AND
+        console.log("Brian"&&"No asignado");
+        console.log(0&&"Valor no asignado");
+        console.log(22&&"Valor no asignado");
+        console.log(false&&"Valor no asignado");
+        console.log(true&&"Valor no asignado");
+        */
+       //------- ALERT,CONFIRM Y PROMP----------
+       //console.log(window);
+       //alert: Esto es una alerta.
+       //confirm:Esto es una confirmación.
+       //promp:Esto es un aviso y permite ingresar valores.
+
+       /*window.alert("Esto es una alerta.");
+       window.confirm("Esto es una confirmación.");
+       window.prompt("Esto permite ingresar datos.");
+
+       let alerta=alert("Esto es una alerta.");
+       let confirmacion=confirm("Esto es una confirmación.");
+       let aviso=prompt("Aviso, permite ingresar valores.");
+
+        console.log(alerta);
+        console.log(confirmacion);
+        console.log(aviso);*/
+
+    //---------Expresiones regulares----------
+    /*Son una secuencia de caracteres que forman un patrón 
+    de busqueda, principalmente utilizada para la búsqueda
+    de patrones de cadenas de caracteres.
+
+    let texto="Texto es un conjunto de enunciados que permite dar un mensaje coherente y ordenado, ya sea de manera escrita o a través de la palabra. Se trata de una estructura compuesta por signos y una escritura determinada que da espacio a una unidad con sentido.";
+    
+    let expRegular=new RegExp("de","ig");//primer parametro son las banderas y el segundo las banderas("g", busca dodas las coincidencias.)
+    let expRegular2=/principalmente/ig;
+    
+    console.log(expRegular.test(texto));
+    console.log(expRegular.exec(texto));
+
+    console.log(expRegular2.test(texto));
+    console.log(expRegular2.exec(texto));
+    */
+
+    //----------Funciones anonimas autoejecutables----
+    /*Son funciones en donde se engloba todo el codigo 
+    que uno quiere ejecutar.
+    No solo se definen sino también se ejecutan y se
+    encuentra protegido de efectos secundarios.
+    */
+   //Función anonima autoejecutable
+        //Clásica
+        (function(){
+            console.log("Función anonima autoejecutable");
+
+        })();
+        (function(d,w,c){
+            console.log("Segunda función anonima autoejecutable");
+            console.log(d);
+            console.log(w);
+            c.log("Este es un console.log");
+        })(document,window,console);
+
+        //Versión Crockford (JavaScript The Good Parts)
+        ((function(){
+            console.log("Versión Crockford");
+        })());
+
+        //Versión Unaria
+        +function(){
+            console.log("Versión unaria");
+        }();
+
+        //Versión facebook
+        !function(){
+            console.log("Versión Facebook");
+        }();
+   
+   
+    
+
+
+
+        
+
+  
+    </script>
+
+
+</body>
+</html>
