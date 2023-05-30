@@ -583,7 +583,7 @@ const eliminaDuplicados=(arreglo=undefined)=>{
     let nuevoArreglo=[...new Set(arreglo)];
     console.info(nuevoArreglo);
 }
-eliminaDuplicados(["x", 10, "x", 2, "10", 10, true, true]);
+//eliminaDuplicados(["x", 10, "x", 2, "10", 10, true, true]);
 
 //SEGUNDA SOLUCIÓN
 
