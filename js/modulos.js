@@ -602,4 +602,191 @@ const promedio =(numeros=undefined)=>{
     console.log(total/numeros.length);
 }
 //promedio([9,8,7,6,5,4,3,2,1,0]);
+/*
+27) Programa una clase llamada Pelicula.
+
+La clase recibirá un objeto al momento de instanciarse con los 
+siguentes datos: id de la película en IMDB, titulo, director, 
+año de estreno, país o países de origen, géneros y calificación en IMBD.
+  - Todos los datos del objeto son obligatorios.
+  - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+     7 restantes números.
+  - Valida que el título no rebase los 100 caracteres.
+  - Valida que el director no rebase los 50 caracteres.
+  - Valida que el año de estreno sea un número entero de 4 dígitos.
+  - Valida que el país o paises sea introducidos en forma de arreglo.
+  - Valida que los géneros sean introducidos en forma de arreglo.
+  - Valida que los géneros introducidos esten dentro de los géneros 
+     aceptados*.
+  - Crea un método estático que devuelva los géneros aceptados*.
+  - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+    decimal de una posición.
+  - Crea un método que devuelva toda la ficha técnica de la película.
+  - Apartir de un arreglo con la información de 3 películas genera 3 
+    instancias de la clase de forma automatizada e imprime la ficha técnica 
+    de cada película.
+
+* Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, 
+Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, 
+Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, 
+War, Western.*/
+
+class Pelicula{
+    constructor({id,titulo,director,yearEstreno,paises,generos,calificacion}){
+    //Instanciar
+        this.id=id;
+        this.titulo=titulo;
+        this.director=director;
+        this.yearEstreno=yearEstreno;
+        this.paises=paises;// en arreglo
+        this.generos=generos;
+        this.calificacion=calificacion;        
+
+        this.validarMDB(id);
+        this.validarTitulo(titulo);
+        this.validarDirector(director);
+        this.validaYear(yearEstreno);
+        this.validarPaises(paises);
+        this.validarGeneros(generos);
+        this.validaCalificacion(calificacion);
+    }
+
+    //Creación Metodo estatico
+    static get listaGeneros(){
+        return ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", 
+                "Crime", "Documentary" ,"Drama", "Family", "Fantasy", "Film Noir", "Game-Show", 
+                "History", "Horror", "Musical", "Music", "Mystery", "News","Reality-TV", "Romance", 
+                "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+    }
+    static generosAceptados(){
+        return console.info(`Generos aceptados: ${Pelicula.listaGeneros.join(",")}`);
+    }
+
+
+
+    //Validaciones
+    validarCadena(tipo,valor){
+        if(!valor) return console.warn(`${tipo} "${valor}" esta vacío.`);
+        if(typeof valor !== "string") return console.error(`${tipo} "${valor}" ingresado, NO es una cadena de texto.`);
+
+        return true;
+    }
+ 
+    longitudCadena(propiedad,valor,longitud){
+        if(valor.length>longitud)return console.error(`${propiedad} el ${valor} no coincide con los caracteres necesarios en la longitud (${longitud}).`);
+    }
+
+    validarYear(tipo,valor){
+        if(!valor) return console.warn(`${tipo} "${valor}" esta vacío.`);
+        if(typeof valor !== "number") return console.error(`${tipo} "${valor}" ingresado, NO es de tipo numero.`);
+
+        return true;
+    }
+
+    validarArreglo(tipo,valor){
+        if (valor===undefined) return console.warn("No has ingresado ningún arreglo.");
+        if (!(valor instanceof Array)) return console.warn("El valor ingresado no es un arreglo.");
+        if(valor.length===0) return console.warn("El arreglo esta vacio.");
+        for (let v of valor){
+            if (typeof v !== "string") return console.error(` ${v} invalido, no se aceptan nombres con caractes de tipo número.`);
+        }
+
+        return true;
+    }
+
+    validarMDB(id){
+        if(this.validarCadena("MDB id",id)){
+            if(!(/^([a-z]){2}([0-9]){7}$/.test(id)))
+            return console.error(`MDB id: ${id} no es valido, este debe de tener 9 caracteres, 2 primeros son letras minusculas y 7 de tipo numero.`);
+        }
+    }
+
+    validarTitulo(titulo){
+        if(this.validarCadena("Titulo",titulo)){
+            this.longitudCadena("Titulo",titulo,100);
+        }
+    }
+
+    validarDirector(director){
+        if(this.validarCadena("Director",director)){
+            this.longitudCadena("Director",director,50);
+        }
+    }
+
+    validaYear(yearEstreno){
+        if(this.validarYear("Fecha de estreno",yearEstreno)){
+            if(!(/^([0-9]){4}$/.test(yearEstreno))) return console.warn(`La fecha de estreno ${yearEstreno} no es correcta.`)
+        }
+    }
+
+    validarPaises(paises){
+        this.validarArreglo("Paises",paises);
+    }
+
+    validarGeneros(generos){
+        if(this.validarArreglo("Genero",generos)){
+            for (let genero of generos){
+                if (!Pelicula.listaGeneros.includes(genero)){
+                    console.error(`"${genero}" no se encuentra dentro de los generos aceptados.`);
+                    Pelicula.generosAceptados();
+                }
+            }
+        }
+    }
+
+    validaCalificacion(calificacion){
+        if(this.validarYear("Calificación",calificacion)){
+            if (calificacion<0 || calificacion>10){
+                console.error("Rango de calificación invalido (debe estar entre 0 y 10).");
+            }else{
+                this.calificacion=calificacion.toFixed(1);
+            }
+        }
+    }
+
+    fichaTecnica(){
+        console.info(`"ID de pelicula: ${this.id}\n Titulo: ${this.titulo}\n Director: ${this.director}\n Año de estreno: ${this.yearEstreno}\n Pais o paises: ${this.paises}\n Genero: ${this.generos}\n Calificación: ${this.calificacion}`);
+    }
+}
+const peli = new Pelicula({
+    id:"kl0986792",
+    titulo:"Crazy and stupid love.",
+    director: "Robbin Williams",
+    yearEstreno:2012,
+    paises:["Mexico","Costa Rica"],
+    generos:["War","News"],
+    calificacion:8.2
+})
+const instaPeliculas=[
+    {
+        id:"zz5987331",
+        titulo:"Sillicon Valley",
+        director: "Peter Witte",
+        yearEstreno:2002,
+        paises:["E.U.A",],
+        generos:["News"],
+        calificacion:9.5   
+    },
+    {
+        id:"pp7894410",
+        titulo:"La Forma del agua",
+        director: "Guillermo del Toro",
+        yearEstreno:2012,
+        paises:["Mexico"],
+        generos:["News"],
+        calificacion:8.2
+    },
+    {
+        id:"bb9900102",
+        titulo:"Dracula",
+        director: "Robbin Williams",
+        yearEstreno:2000,
+        paises:["Gran Bretaña"],
+        generos:["War"],
+        calificacion:8.9
+    }
+];
+//peli.fichaTecnica();
+//instaPeliculas.forEach(elemento=> new Pelicula(elemento).fichaTecnica());
+
 
